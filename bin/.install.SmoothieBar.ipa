@@ -1,0 +1,10 @@
+/Users/shaunmitchell/sdks-libs/air4-0_sdk_mac/bin/adt
+-installApp
+-platform
+ios
+-platformsdk
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+-device
+ios-simulator
+-package
+/Users/shaunmitchell/Documents/culprit/SmoothieBar/bin/SmoothieBar.ipa
