@@ -19,6 +19,8 @@ package com.culpritgames.smoothiebar.util {
 			
 			bitmapDataForVector.dispose();
 			
+			clip = null;
+			
 			return img;
 		}
 	}

@@ -1,23 +1,16 @@
 package com.culpritgames.smoothiebar {
 	import starling.display.Sprite;
 
-	import com.culpritgames.smoothiebar.util.Util;
+	import com.culpritgames.smoothiebar.state.StateFactory;
+	import com.culpritgames.smoothiebar.state.StateMachine;
 
 	/**
 	 * @author shaunmitchell
 	 */
-	public class Game extends Sprite 
-	{
-		private var menu:MenuScreen = new MenuScreen();
-		
-		public function Game() 
-		{
-			addChild(Util.imageFromVector(menu));
-			for (var i : uint = 0; i < 4; i++) 
-			{
-				var counter:CounterTop = new CounterTop(i);
-				addChild(counter);
-			}
+	public class Game extends Sprite {
+
+		public function Game() {
+			StateMachine.getInstance().changeState(StateFactory.MAIN_MENU);
 		}
 	}
 }
