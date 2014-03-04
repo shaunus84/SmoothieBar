@@ -1,4 +1,5 @@
-package com.culpritgames.smoothiebar.state.base {
+package com.culpritgames.smoothiebar.state.base
+{
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -16,25 +17,27 @@ package com.culpritgames.smoothiebar.state.base {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class InGameState extends State implements IState {
+	public class InGameState extends State implements IState
+	{
 		private var _shopBackground : ShopBackground = new ShopBackground();
 		private var _counter : Sprite;
 		private var _smoothieBack : Sprite;
 		private var _appleButton : Sprite;
 		private var _bananaButton : Sprite;
 		private var _orangeButton : Sprite;
-		private var _appleText:TextField;
-		private var _bananaText:TextField;
-		private var _orangeText:TextField;
-		
-		private var _numApples:int = 0;
-		private var _numBananas:int = 0;
-		private var _numOranges:int = 0;
+		private var _appleText : TextField;
+		private var _bananaText : TextField;
+		private var _orangeText : TextField;
+		private var _numApples : int = 0;
+		private var _numBananas : int = 0;
+		private var _numOranges : int = 0;
 
-		public function InGameState() {
+		public function InGameState()
+		{
 		}
 
-		public override function onEnter() : Boolean {
+		public override function onEnter() : Boolean
+		{
 			super.onEnter();
 
 			var counter : Image = Util.imageFromVector(_shopBackground.counter);
@@ -61,7 +64,7 @@ package com.culpritgames.smoothiebar.state.base {
 			return true;
 		}
 
-		private function createButtons() : void 
+		private function createButtons() : void
 		{
 			var smoothie : SmoothieCreator = new SmoothieCreator();
 			var apple : Image = Util.imageFromVector(smoothie.apple);
@@ -96,38 +99,38 @@ package com.culpritgames.smoothiebar.state.base {
 			_appleButton.y += _smoothieBack.y;
 			_orangeButton.y += _smoothieBack.y;
 			_bananaButton.y += _smoothieBack.y;
-			
+
 			addChild(_appleButton);
 			addChild(_orangeButton);
 			addChild(_bananaButton);
-			
+
 			_appleText = new TextField(smoothie.appleText.width, smoothie.appleText.height, "x " + _numApples, "8bit", 25, 0xffffff);
-			_bananaText = new TextField(smoothie.bananaText.width, smoothie.bananaText.height, "x "  + _numBananas, "8Bit", 25, 0xffffff);
-			_orangeText = new TextField(smoothie.orangeText.width, smoothie.orangeText.height, "x "  + _numOranges, "8Bit", 25, 0xffffff);
+			_bananaText = new TextField(smoothie.bananaText.width, smoothie.bananaText.height, "x " + _numBananas, "8Bit", 25, 0xffffff);
+			_orangeText = new TextField(smoothie.orangeText.width, smoothie.orangeText.height, "x " + _numOranges, "8Bit", 25, 0xffffff);
 			_appleText.x += smoothie.appleText.x;
 			_bananaText.x += smoothie.bananaText.x;
 			_orangeText.x += smoothie.orangeText.x;
 			_appleText.y += smoothie.appleText.y;
 			_bananaText.y += smoothie.bananaText.y;
 			_orangeText.y += smoothie.orangeText.y;
-			
+
 			smoothie.removeChild(smoothie.appleText);
 			smoothie.removeChild(smoothie.bananaText);
 			smoothie.removeChild(smoothie.orangeText);
-			
+
 			_appleText.x += _smoothieBack.x;
 			_bananaText.x += _smoothieBack.x;
 			_orangeText.x += _smoothieBack.x;
 			_appleText.y += _smoothieBack.y;
 			_bananaText.y += _smoothieBack.y;
 			_orangeText.y += _smoothieBack.y;
-			
+
 			_smoothieBack.addChild(Util.imageFromVector(smoothie));
-			
+
 			addChild(_appleText);
 			addChild(_bananaText);
 			addChild(_orangeText);
-			
+
 			_appleButton.addEventListener(TouchEvent.TOUCH, appleClicked);
 			_orangeButton.addEventListener(TouchEvent.TOUCH, orangeClicked);
 			_bananaButton.addEventListener(TouchEvent.TOUCH, bananaClicked);
@@ -135,66 +138,78 @@ package com.culpritgames.smoothiebar.state.base {
 			// 632 118
 		}
 
-		private function bananaClicked(event : TouchEvent) : void 
+		private function bananaClicked(event : TouchEvent) : void
 		{
 			var touch : Touch = event.getTouch(_bananaButton, TouchPhase.ENDED);
 
-			if (touch) {
+			if (touch)
+			{
 				_numBananas++;
 				_bananaText.text = "x " + _numBananas;
 			}
 		}
 
-		private function orangeClicked(event : TouchEvent) : void 
+		private function orangeClicked(event : TouchEvent) : void
 		{
 			var touch : Touch = event.getTouch(_orangeButton, TouchPhase.ENDED);
 
-			if (touch) {
+			if (touch)
+			{
 				_numOranges++;
 				_orangeText.text = "x " + _numOranges;
 			}
 		}
 
-		private function appleClicked(event : TouchEvent) : void 
+		private function appleClicked(event : TouchEvent) : void
 		{
 			var touch : Touch = event.getTouch(_appleButton, TouchPhase.ENDED);
 
-			if (touch) {
+			if (touch)
+			{
 				_numApples++;
 				_appleText.text = "x " + _numApples;
 			}
 		}
 
-		public override function onExit() : Boolean {
+		public override function onExit() : Boolean
+		{
 			super.onExit();
 			return true;
 		}
 
-		public override function onPause() : void {
+		public override function onPause() : void
+		{
 			super.onPause();
 		}
 
-		public override function onResume() : void {
+		public override function onResume() : void
+		{
 		}
 
-		public override function get type() : int {
+		public override function get type() : int
+		{
 			return StateFactory.IN_GAME;
 		}
 
-		public override function get isSubState() : Boolean {
+		public override function get isSubState() : Boolean
+		{
 			return false;
 		}
 
-		public override function destroy() : void {
+		public override function destroy() : void
+		{
 			removeChildren(0, numChildren, true);
 		}
 
-		public override function get typeAsString() : String {
+		public override function get typeAsString() : String
+		{
 			return "IN GAME STATE";
 		}
 
-		public override function run(e : Event) : void {
-			if (_isRunning) {
+		public override function run(e : Event) : void
+		{
+			if (_isRunning)
+			{
 			}
 		}
 	}

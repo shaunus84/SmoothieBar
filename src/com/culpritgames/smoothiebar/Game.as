@@ -1,4 +1,5 @@
-package com.culpritgames.smoothiebar {
+package com.culpritgames.smoothiebar
+{
 	import starling.display.Sprite;
 
 	import com.culpritgames.smoothiebar.state.StateFactory;
@@ -7,9 +8,10 @@ package com.culpritgames.smoothiebar {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class Game extends Sprite {
-
-		public function Game() {
+	public class Game extends Sprite
+	{
+		public function Game()
+		{
 			StateMachine.getInstance().changeState(StateFactory.MAIN_MENU);
 		}
 	}

@@ -42,11 +42,11 @@ com.powerflasher.fdt.core.mobile.iOS.ICON.PATH.76x76=
 com.powerflasher.fdt.core.mobile.iOS.ICON.PATH.80x80=
 com.powerflasher.fdt.core.mobile.iOS.MOBILE.DESCRIPTOR=bin/SmoothieBar-app.xml
 com.powerflasher.fdt.core.mobile.iOS.PACKAGE.CONTENT=bin/SmoothieBar-app.xml > SmoothieBar-app.xml;bin/SmoothieBar.swf > SmoothieBar.swf;
-com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.CERTIFICATE=
+com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.CERTIFICATE=../../../../ClientDev/AS/cert/iOS/tombola_iOS_Chris_Developer.p12
 com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.CERTIFICATE.RELEASE=
-com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.PROVISIONING.FILE=
+com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.PROVISIONING.FILE=../../../../ClientDev/AS/cert/iOS/Flash_Provisioning_Profile.mobileprovision
 com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.PROVISIONING.FILE.RELEASE=
-com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.PWD=HZsdm2UDN/4\=
+com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.PWD=b9RjHf20hyGn/GSRPsG3UQ\=\=
 com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.PWD.RELEASE=HZsdm2UDN/4\=
 com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.REMEMBER.PWD=false
 com.powerflasher.fdt.core.mobile.iOS.SIGNATURE.REMEMBER.PWD.RELEASE=false

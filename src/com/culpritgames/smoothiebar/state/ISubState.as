@@ -1,11 +1,12 @@
-package com.culpritgames.smoothiebar.state {
+package com.culpritgames.smoothiebar.state
+{
 	import com.culpritgames.smoothiebar.state.IState;
 
 	/**
 	 * @author shaunmitchell
 	 */
-	public interface ISubState extends IState 
+	public interface ISubState extends IState
 	{
-		function get pausesBaseState():Boolean;
+		function get pausesBaseState() : Boolean;
 	}
 }

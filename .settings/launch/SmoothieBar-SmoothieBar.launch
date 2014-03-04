@@ -15,7 +15,7 @@
 <booleanAttribute key="DISABLE_COMPILE_PROCESS" value="false"/>
 <stringAttribute key="INSTALL_TARGET" value="installSimulator"/>
 <stringAttribute key="LAUNCHER_DEPENDENCIES" value="[Self]"/>
-<intAttribute key="LAUNCH_METHOD" value="0"/>
+<intAttribute key="LAUNCH_METHOD" value="1"/>
 <stringAttribute key="MAIN_CLASS" value="src/com/culpritgames/smoothiebar/SmoothieBar.as"/>
 <stringAttribute key="MOBILE_PRESET" value="Apple iPad1/2"/>
 <intAttribute key="PACKAGE_METHOD" value="1"/>

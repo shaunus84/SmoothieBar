@@ -1,9 +1,12 @@
-package com.culpritgames.smoothiebar.state {
+package com.culpritgames.smoothiebar.state
+{
 	import starling.events.Event;
+
 	/**
 	 * @author shaunmitchell
 	 */
-	public interface IState {
+	public interface IState
+	{
 		/*
 		 * Both of these values will be preset when the state is defined
 		 */
@@ -12,8 +15,8 @@ package com.culpritgames.smoothiebar.state {
 		function get isSubState() : Boolean;
 
 		function get typeAsString() : String;
-		
-		function run(e:Event):void;
+
+		function run(e : Event) : void;
 
 		// -----------------------
 		function onEnter() : Boolean;

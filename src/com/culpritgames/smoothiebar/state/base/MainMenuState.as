@@ -1,4 +1,5 @@
-package com.culpritgames.smoothiebar.state.base {
+package com.culpritgames.smoothiebar.state.base
+{
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -15,15 +16,18 @@ package com.culpritgames.smoothiebar.state.base {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class MainMenuState extends State implements IState {
+	public class MainMenuState extends State implements IState
+	{
 		private var menuScreen : MenuScreen = new MenuScreen();
 		private var playButton : Sprite;
 
-		public function MainMenuState() {
+		public function MainMenuState()
+		{
 			createButtons();
 		}
 
-		private function createButtons() : void {
+		private function createButtons() : void
+		{
 			var button : Image = Util.imageFromVector(menuScreen.playButton);
 			playButton = new Sprite();
 			playButton.addChild(button);
@@ -32,7 +36,8 @@ package com.culpritgames.smoothiebar.state.base {
 			menuScreen.removeChild(menuScreen.playButton);
 		}
 
-		public override function onEnter() : Boolean {
+		public override function onEnter() : Boolean
+		{
 			super.onEnter();
 
 			addChild(Util.imageFromVector(menuScreen));
@@ -43,47 +48,56 @@ package com.culpritgames.smoothiebar.state.base {
 			return true;
 		}
 
-		private function clickedButton(event : TouchEvent) : void {
-			trace("clicked");
+		private function clickedButton(event : TouchEvent) : void
+		{
 			var touch : Touch = event.getTouch(playButton, TouchPhase.ENDED);
-
-			if (touch) {
+			if (touch)
+			{
 				StateMachine.getInstance().changeState(StateFactory.IN_GAME);
 			}
 		}
 
-		public override function onExit() : Boolean {
+		public override function onExit() : Boolean
+		{
 			super.onExit();
 			return true;
 		}
 
-		public override function onPause() : void {
+		public override function onPause() : void
+		{
 			super.onPause();
 		}
 
-		public override function onResume() : void {
+		public override function onResume() : void
+		{
 		}
 
-		public override function get type() : int {
+		public override function get type() : int
+		{
 			return StateFactory.MAIN_MENU;
 		}
 
-		public override function get isSubState() : Boolean {
+		public override function get isSubState() : Boolean
+		{
 			return false;
 		}
 
-		public override function destroy() : void {
+		public override function destroy() : void
+		{
 			removeChildren(0, numChildren, true);
 			playButton = null;
 			menuScreen = null;
 		}
 
-		public override function get typeAsString() : String {
+		public override function get typeAsString() : String
+		{
 			return "MAIN MENU STATE";
 		}
 
-		public override function run(e : Event) : void {
-			if (_isRunning) {
+		public override function run(e : Event) : void
+		{
+			if (_isRunning)
+			{
 			}
 		}
 	}

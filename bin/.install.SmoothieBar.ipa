@@ -1,4 +1,4 @@
-/Users/shaunmitchell/sdks-libs/air4-0_sdk_mac/bin/adt
+/Users/shaun.mitchell/Documents/sdks/flex_sdk_4.6_AIR_4/bin/adt
 -installApp
 -platform
 ios
@@ -7,4 +7,4 @@ ios
 -device
 ios-simulator
 -package
-/Users/shaunmitchell/Documents/culprit/SmoothieBar/bin/SmoothieBar.ipa
+/Users/shaun.mitchell/Documents/SmoothieBar/bin/SmoothieBar.ipa

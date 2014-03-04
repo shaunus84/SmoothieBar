@@ -1,5 +1,7 @@
-package com.culpritgames.smoothiebar.state {
+package com.culpritgames.smoothiebar.state
+{
 	import com.culpritgames.smoothiebar.SmoothieBar;
+
 	import flash.system.Capabilities;
 
 	import starling.display.DisplayObject;
@@ -8,7 +10,8 @@ package com.culpritgames.smoothiebar.state {
 	/**
 	 * @author shaunmitchell
 	 */
-	public class StateMachine {
+	public class StateMachine
+	{
 		/* 2 states at any one time in this game - a main base state - GAME/MENU etc.
 		 * and a sub state smoothie making state, shop closed state etc.
 		 * enforce this with a vector of fixed size of 2
@@ -18,11 +21,14 @@ package com.culpritgames.smoothiebar.state {
 		private static const SUB_STATE : uint = 1;
 		private static var _instance : StateMachine;
 
-		public function StateMachine() : void {
+		public function StateMachine() : void
+		{
 		}
 
-		public static function getInstance() : StateMachine {
-			if (!_instance) {
+		public static function getInstance() : StateMachine
+		{
+			if (!_instance)
+			{
 				_instance = new StateMachine();
 			}
 
@@ -32,11 +38,16 @@ package com.culpritgames.smoothiebar.state {
 		/*
 		 * Change state will change the base state only, never the sub states
 		 */
-		public function changeState(stateType : int) : void {
-			if (StateFactory.BASE_STATES.indexOf(stateType) >= 0) {
-				if (_gameStates) {
-					if (_gameStates[BASE_STATE]) {
-						if (_gameStates[BASE_STATE].onExit()) {
+		public function changeState(stateType : int) : void
+		{
+			if (StateFactory.BASE_STATES.indexOf(stateType) >= 0)
+			{
+				if (_gameStates)
+				{
+					if (_gameStates[BASE_STATE])
+					{
+						if (_gameStates[BASE_STATE].onExit())
+						{
 							_gameStates[BASE_STATE].running = false;
 							_gameStates[BASE_STATE].destroy();
 							Starling.current.stage.removeChild(DisplayObject(_gameStates[BASE_STATE]));
@@ -44,17 +55,21 @@ package com.culpritgames.smoothiebar.state {
 
 							_gameStates[BASE_STATE] = StateFactory.createState(stateType);
 
-							if (_gameStates[BASE_STATE].onEnter()) {
+							if (_gameStates[BASE_STATE].onEnter())
+							{
 								_gameStates[BASE_STATE].running = true;
 								Starling.current.stage.addChild(DisplayObject(_gameStates[BASE_STATE]));
 								DisplayObject(_gameStates[BASE_STATE]).scaleX = SmoothieBar.WIDTH / 1024;
 								DisplayObject(_gameStates[BASE_STATE]).scaleY = SmoothieBar.HEIGHT / 768;
 							}
 						}
-					} else {
+					}
+					else
+					{
 						_gameStates[BASE_STATE] = StateFactory.createState(stateType);
 
-						if (_gameStates[BASE_STATE].onEnter()) {
+						if (_gameStates[BASE_STATE].onEnter())
+						{
 							_gameStates[BASE_STATE].running = true;
 							Starling.current.stage.addChild(DisplayObject(_gameStates[BASE_STATE]));
 							DisplayObject(_gameStates[BASE_STATE]).scaleX = SmoothieBar.WIDTH / 1024;
@@ -68,17 +83,23 @@ package com.culpritgames.smoothiebar.state {
 		/*
 		 * Push on a sub state 
 		 */
-		public function pushState(stateType : int) : void {
-			if (StateFactory.SUB_STATES.indexOf(stateType) >= 0) {
-				if (_gameStates) {
-					if (_gameStates[BASE_STATE]) {
+		public function pushState(stateType : int) : void
+		{
+			if (StateFactory.SUB_STATES.indexOf(stateType) >= 0)
+			{
+				if (_gameStates)
+				{
+					if (_gameStates[BASE_STATE])
+					{
 						_gameStates[SUB_STATE] = StateFactory.createState(stateType);
 
-						if (ISubState(_gameStates[SUB_STATE]).pausesBaseState) {
+						if (ISubState(_gameStates[SUB_STATE]).pausesBaseState)
+						{
 							_gameStates[BASE_STATE].onPause();
 						}
 
-						if (_gameStates[SUB_STATE].onEnter()) {
+						if (_gameStates[SUB_STATE].onEnter())
+						{
 							_gameStates[SUB_STATE].running = true;
 							Starling.current.stage.addChild(DisplayObject(_gameStates[SUB_STATE]));
 						}
@@ -90,17 +111,22 @@ package com.culpritgames.smoothiebar.state {
 		/*
 		 * Pop off the sub state
 		 */
-		public function popState() : void {
-			if (_gameStates) {
-				if (_gameStates[SUB_STATE]) {
-					if (_gameStates[SUB_STATE].onExit()) {
+		public function popState() : void
+		{
+			if (_gameStates)
+			{
+				if (_gameStates[SUB_STATE])
+				{
+					if (_gameStates[SUB_STATE].onExit())
+					{
 						_gameStates[SUB_STATE].running = false;
 						_gameStates[SUB_STATE].destroy();
 						Starling.current.stage.removeChild(DisplayObject(_gameStates[SUB_STATE]));
 						_gameStates[SUB_STATE] = null;
 					}
 
-					if (_gameStates[BASE_STATE].paused) {
+					if (_gameStates[BASE_STATE].paused)
+					{
 						_gameStates[BASE_STATE].onResume();
 					}
 				}
