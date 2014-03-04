@@ -18,14 +18,14 @@ package com.culpritgames.smoothiebar.state
 		public function onEnter() : Boolean
 		{
 			trace("entering " + typeAsString);
-			addEventListener(Event.ENTER_FRAME, run);
+			//addEventListener(Event.ENTER_FRAME, run);
 			return null;
 		}
 
 		public function onExit() : Boolean
 		{
 			trace("exiting " + typeAsString);
-			removeEventListener(Event.ENTER_FRAME, run);
+			//removeEventListener(Event.ENTER_FRAME, run);
 			return null;
 		}
 

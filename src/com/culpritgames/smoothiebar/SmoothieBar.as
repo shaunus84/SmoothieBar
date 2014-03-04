@@ -8,7 +8,7 @@ package com.culpritgames.smoothiebar
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 
-	[SWF(width='1024', height='768', backgroundColor='#000066', frameRate='60')]
+	[SWF(width='1024', height='768', backgroundColor='#33FFFF', frameRate='60')]
 	public class SmoothieBar extends Sprite
 	{
 		private var _starling : Starling;

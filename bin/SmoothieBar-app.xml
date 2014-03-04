@@ -13,7 +13,7 @@
 -->
   <!-- A universally unique application identifier. Must be unique across all AIR applications.
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
-  <id>com.culpritgames.smoothiebar</id>
+  <id>com.tombola.smoothiebar</id>
   <!-- Used as the filename for the application. Required. -->
   <filename>SmoothieBar</filename>
   <!-- The name that is displayed in the AIR application installer. 

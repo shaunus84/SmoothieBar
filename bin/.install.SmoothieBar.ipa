@@ -2,9 +2,7 @@
 -installApp
 -platform
 ios
--platformsdk
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
 -device
-ios-simulator
+6
 -package
 /Users/shaun.mitchell/Documents/SmoothieBar/bin/SmoothieBar.ipa

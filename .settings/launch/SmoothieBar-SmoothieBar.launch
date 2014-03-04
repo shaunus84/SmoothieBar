@@ -13,7 +13,7 @@
 <intAttribute key="DEBUG_VIA" value="0"/>
 <booleanAttribute key="DEINSTALL_TARGET" value="true"/>
 <booleanAttribute key="DISABLE_COMPILE_PROCESS" value="false"/>
-<stringAttribute key="INSTALL_TARGET" value="installSimulator"/>
+<stringAttribute key="INSTALL_TARGET" value="38053cf414329f0ada396ec054a9fc51473b6ce1"/>
 <stringAttribute key="LAUNCHER_DEPENDENCIES" value="[Self]"/>
 <intAttribute key="LAUNCH_METHOD" value="1"/>
 <stringAttribute key="MAIN_CLASS" value="src/com/culpritgames/smoothiebar/SmoothieBar.as"/>

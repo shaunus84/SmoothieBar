@@ -1,9 +1,9 @@
 /Users/shaun.mitchell/Documents/sdks/flex_sdk_4.6_AIR_4/bin/adt
 -package
 -target
-ipa-debug-interpreter-simulator
--connect
-192.168.11.111
+ipa-debug-interpreter
+-listen
+7936
 -storetype
 pkcs12
 -keystore
@@ -18,4 +18,4 @@ bin/SmoothieBar-app.xml
 bin
 SmoothieBar.swf
 -platformsdk
-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/
